@@ -15,10 +15,10 @@ pendant = False
 
 HP = 50
 HPMAX = HP
-ATK = 50
-pot = 10
-elix = 10
-gold = 100
+ATK = 4
+pot = 1
+elix = 0
+gold = 5
 x = 3
 y = 3
 
@@ -176,7 +176,7 @@ def battle():
         draw()
         print("1 - ATTACK")
         if pot > 0:
-            print("2 - USE POTION (30HP)")
+            print("2 - USE POTION (20HP)")
         if elix > 0:
             print("3 - USE ELIXIR (50HP)")
         draw()
@@ -193,7 +193,7 @@ def battle():
         elif choice == "2":
             if pot > 0:
                 pot -= 1
-                heal(30)
+                heal(20)
                 HP -= atk
                 print(enemy + " hits " + name + " for " + str(atk) + ".")
             else:
@@ -298,7 +298,7 @@ def shop():
             print("ELIXIRS: " + str(elix))
             print("ATK: " + str(ATK))
             draw()
-            print("1 - BUY POTION (30HP)")
+            print("1 - BUY POTION (20HP)")
             print("2 - BUY ELIXIR (MAXHP)")
             print("3 - VISIT BLACKSMITH (+2ATK)")
             print("4 - HEARTY MEAL (+20MAXHP)")
@@ -384,7 +384,7 @@ def shop():
             print("ELIXIRS: " + str(elix))
             print("ATK: " + str(ATK))
             draw()
-            print("1 - BUY POTION (30HP)")
+            print("1 - BUY POTION (20HP)")
             print("2 - BUY ELIXIR (MAXHP)")
             print("3 - VISIT BLACKSMITH (+2ATK)")
             print("0 - LEAVE")
@@ -667,7 +667,7 @@ while run:
             if x > 0:
                 print("4 - WEST")
             if pot > 0:
-                print("5 - USE POTION (30HP)")
+                print("5 - USE POTION (20HP)")
             if elix > 0:
                 print("6 - USE ELIXIR (50hp)")
             if map[y][x] == "shop" or map[y][x] == "town" or map[y][x] == "castle" or map[y][x] == "cave":
@@ -699,7 +699,7 @@ while run:
             elif dest == "5":
                 if pot > 0:
                     pot -= 1
-                    heal(30)
+                    heal(20)
                 else:
                     print(name + " doesn't have any potions!")
                 input("# ")
